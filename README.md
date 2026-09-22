@@ -1,15 +1,11 @@
-# skills
+# prd-5w1h
 
-팀 공용 AI 에이전트 스킬 모음입니다. [skills CLI](https://skills.sh)(`npx skills`) 규약을 따르며, Claude Code·Codex·Cursor 등 SKILL.md를 읽는 모든 에이전트에서 쓸 수 있습니다.
+5W1H(Why·Who·What·When·Where·How) 입력으로 서비스 기획서 초안 `PRD.md`를 만드는 AI 에이전트 스킬입니다. Claude Code·Codex·Cursor 등 SKILL.md를 읽는 모든 에이전트에서 쓸 수 있습니다.
 
 ## 설치
 
 ```bash
-# 리포 안 스킬을 골라서 설치
-npx skills add songbly-dev/skills
-
-# 특정 스킬만 바로 설치
-npx skills add songbly-dev/skills@prd-5w1h
+npx skills add songbly-dev/prd-5w1h
 ```
 
 - 이 리포는 **private**입니다. 설치하려는 사람이 이 리포 읽기 권한과 `gh auth login`(또는 SSH 키)이 있어야 합니다 — CLI가 내부적으로 `gh repo clone`/`git clone`을 씁니다.
@@ -18,22 +14,21 @@ npx skills add songbly-dev/skills@prd-5w1h
 ### 수동 설치 (CLI 없이)
 
 ```bash
-git clone https://github.com/songbly-dev/skills.git
+git clone https://github.com/songbly-dev/prd-5w1h.git
 # 전역 설치
-cp -r skills/skills/prd-5w1h ~/.agents/skills/
+mkdir -p ~/.agents/skills/prd-5w1h && cp prd-5w1h/SKILL.md ~/.agents/skills/prd-5w1h/
 # 또는 특정 프로젝트에만
-cp -r skills/skills/prd-5w1h <프로젝트>/.agents/skills/
+mkdir -p <프로젝트>/.agents/skills/prd-5w1h && cp prd-5w1h/SKILL.md <프로젝트>/.agents/skills/prd-5w1h/
 ```
 
-## 스킬 목록
+## 사용법
 
-| 스킬 | 설명 |
-|---|---|
-| [`prd-5w1h`](skills/prd-5w1h/SKILL.md) | 5W1H(Why·Who·What·When·Where·How) 입력으로 서비스 기획서 초안 `PRD.md`를 만든다 |
+설치 후 에이전트에게 아래처럼 요청하면 동작합니다.
 
-## 새 스킬 추가하기
+- "PRD 써줘", "기획서 초안 만들어줘", "5w1h 기획서", `/prd-5w1h`
+- 서비스명과 5W1H(왜·누구·무엇·언제·어디서·어떻게)를 함께 주면 바로 초안을 뽑고, 정보가 없으면 입력 양식을 보여줍니다.
+- 결과물은 프로젝트 루트의 `PRD.md` — 「이 문서에 대하여」+ 목차 + 본문 5섹션(개요·페르소나·주요 기능·페이지 구조·성공 지표) 고정 포맷입니다.
 
-1. `skills/<스킬이름>/SKILL.md` 파일을 만든다.
-2. frontmatter에 `name`과 `description`을 적는다(기존 스킬 참고).
-3. 이 README의 스킬 목록 표에 한 줄 추가한다.
-4. main에 머지되면 바로 `npx skills add`로 설치된다.
+## 스킬 파일
+
+- [`SKILL.md`](SKILL.md) — 스킬 본체(입력 계약·절차·출력 포맷·금지 규칙)
