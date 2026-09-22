@@ -1,5 +1,7 @@
 # prd-5w1h
 
+[![skills.sh](https://skills.sh/b/songbly-dev/prd-5w1h)](https://skills.sh/songbly-dev/prd-5w1h)
+
 5W1H(Why·Who·What·When·Where·How) 입력으로 서비스 기획서 초안 `PRD.md`를 만드는 AI 에이전트 스킬입니다. Claude Code·Codex·Cursor 등 SKILL.md를 읽는 모든 에이전트에서 쓸 수 있습니다.
 
 ## 설치
@@ -8,8 +10,7 @@
 npx skills add songbly-dev/prd-5w1h
 ```
 
-- 이 리포는 **private**입니다. 설치하려는 사람이 이 리포 읽기 권한과 `gh auth login`(또는 SSH 키)이 있어야 합니다 — CLI가 내부적으로 `gh repo clone`/`git clone`을 씁니다.
-- 권한이 없는 사람에게 줄 때는 리포를 public으로 바꾸거나, 아래 수동 설치를 안내하세요.
+Node.js만 설치돼 있으면 위 명령 한 줄로 끝납니다(별도 회원가입·로그인 불필요).
 
 ### 수동 설치 (CLI 없이)
 
